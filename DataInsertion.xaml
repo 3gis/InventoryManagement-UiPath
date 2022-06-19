@@ -3,7 +3,7 @@
     <x:Property Name="in_dtData" Type="InArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>866,2009</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>866,1384</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="74">
@@ -91,21 +91,13 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow opens a chrome browser and adds/updates/deletes the data depending on the datatable Action column" DisplayName="DataInsertion" sap:VirtualizedContainerService.HintSize="691,1944" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow opens a chrome browser and adds/updates/deletes the data depending on the datatable Action column" DisplayName="DataInsertion" sap:VirtualizedContainerService.HintSize="691,1319" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Update" Name="strActionText" />
-      <Variable x:TypeArguments="x:String" Name="strProductName">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">Orchestrator</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="Orchestrator" Name="strProductName" />
       <Variable x:TypeArguments="x:String" Default="UiPath" Name="strSeller" />
       <Variable x:TypeArguments="x:String" Default="5000" Name="strPrice" />
-      <Variable x:TypeArguments="x:String" Name="strID">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">1</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="1" Name="strID" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -120,25 +112,25 @@
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Inventory Management" sap:VirtualizedContainerService.HintSize="649,1559" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="444222d4-3709-49a9-8d0f-3c328a769bc3" Version="V2">
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Inventory Management" sap:VirtualizedContainerService.HintSize="649,936" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="444222d4-3709-49a9-8d0f-3c328a769bc3" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="615,1343" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="615,720" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="573,1249" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table 'in_dtData'" sap:VirtualizedContainerService.HintSize="573,2021" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="539,1133" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="539,1906" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -198,7 +190,7 @@
                         </scg:List>
                       </ui:MultipleAssign.AssignOperations>
                     </ui:MultipleAssign>
-                    <Switch x:TypeArguments="x:String" DisplayName="Switch on strActionText" sap:VirtualizedContainerService.HintSize="497,806" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                    <Switch x:TypeArguments="x:String" DisplayName="Switch on strActionText" sap:VirtualizedContainerService.HintSize="497,1581" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                       <Switch.Default>
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Fatal">
                           <ui:LogMessage.Message>
@@ -213,7 +205,7 @@
                           <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">strActionText</mca:CSharpValue>
                         </InArgument>
                       </Switch.Expression>
-                      <Sequence x:Key="Insert" sap:VirtualizedContainerService.HintSize="376,963" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence x:Key="Insert" sap:VirtualizedContainerService.HintSize="376,961" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -289,7 +281,7 @@
                           </uix:NClick.Target>
                         </uix:NClick>
                       </Sequence>
-                      <Sequence x:Key="Update" sap:VirtualizedContainerService.HintSize="376,1355" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <Sequence x:Key="Update" sap:VirtualizedContainerService.HintSize="376,1353" sap2010:WorkflowViewState.IdRef="Sequence_5">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -298,7 +290,7 @@
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace">
                           <ui:LogMessage.Message>
                             <InArgument x:TypeArguments="x:Object">
-                              <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">String.Concat("Updating into:", strProductName, strSeller, strPrice )</mca:CSharpValue>
+                              <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66" xml:space="preserve">String.Concat("Updating into: ", strProductName, " ", strSeller, " ",  strPrice, " " )</mca:CSharpValue>
                             </InArgument>
                           </ui:LogMessage.Message>
                         </ui:LogMessage>
@@ -306,7 +298,7 @@
                           <uix:NGetText.Target>
                             <uix:TargetAnchorable BrowserURL="https://excelcult.com/inventorymanagement/" DesignTimeRectangle="573, 490, 71, 50" ElementType="Text" FriendlyName="'1'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='TD' colName='ID' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='TD' colName='ID' type='' class='' /&gt;" Guid="425d32ff-4176-40c7-a187-cf7380327acb" InformativeScreenshot="fffef18fdf258fde20163312c9ba412c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Inventory Management' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
                               <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                   <uix:Target DesignTimeRectangle="644, 490, 229, 50" ElementType="Text" FriendlyName="'Orchestrator'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='2' tag='TD' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOkAAAA2CAYAAAAiX74ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALZSURBVHhe7dlLTuswGIbhbuUMGJxNISQW0kG7EaSuhKqrQAoSAxbQDfikduzYzu+k9ML5pL6RngG5OEnltwmwciwsLNLLqvv6dgB0ESkgbnU8Hh0AXUQKiCNSQByRAuKIFBBHpIA4IgXEESkgjkgBcUQKiCNSQByRAuKIFBBHpIA4IgXEESkgjkgBcUQKiNOO9GPnnp9e3duHsQ14EDeI9NO9vfx1f55yW7c39/0hIgWujPR966N83n0W67vdq1+/fs/2vcQvROqv9WXnOmPbj/nP40ZfUMDgikgPbm0EmtxiwhIpcHmky5M7vAaPEcefD+n1eHzShuDH1+UhzBRpud36YthvjOPjdj9Ott1ft/GaHu8nxja8KaT15jjhHOX5T/JYG/eXts99Nnh0F0fqJ+XmYG6Lyn1iFHZAeXjdbptFejomm/A+nHKMybUU+4RAxknfX8dmjMv8solxVve33+ThDfczOW/1JDXuL45fXJP12QC9qyJtvuoOfAB1pJOJP12XDBO8fKqEcdK5/T5VGPk+fnt78rcjXQ5mcqwRaev+zC+w1ueAh/brT9Iy7LCu+WpnBlaNE596hriPv47TOuN625HW4QdprGg20pn7O+2bjrU+GyD4D7+T3iHS2euIwnF1rGdHOjzVZ48lUtzBxZFOf9erNCZsPRFnn8jnRLrwOjtRXde5kVr7LUfavr/ltwwguCLSnp+U08nlJ+8k4MZEHJ5Q+fryD0cLkQ4/1wGlP/L0Y6zzc9YhGWGdtW647uK81vUa9xfGyvcjUrRdF6lX/3thGkwwMxHjhK+Ptya9Oc4QajZG2l6PXceXHxvPa0XaK34f7ffdG0/XcR8j6MS+BiKF5QaRArgnIgXEESkgjkgBcUQKiCNSQByRAuKIFBBHpIA4IgXEESkgjkgBcUQKiCNSQByRAuKIFBBHpIA4IgXErbqvbwdA18qxsLBIL0TKwiK9OPcPKX0goUb3FqwAAAAASUVORK5CYII=" SearchSteps="FuzzySelector">
                                     <uix:Target.FuzzySelectorArgument>
                                       <InArgument x:TypeArguments="x:String">
@@ -328,7 +320,7 @@
                           <uix:NClick.Target>
                             <uix:TargetAnchorable BrowserURL="https://excelcult.com/inventorymanagement/" DesignTimeRectangle="1158, 507, 20, 20" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='IMG' colName='Edit' rowName='1' /&gt;" FuzzyAccuracy="0.9" Guid="0f9cf8ab-e842-43eb-8c04-76d86f76c4da" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIiSURBVEhL1ZS9TxRBGMb5B/iKkQZqKko7E6iMuYPGjsKExr/AWGr40Egh8dDLAVFAJTESrdBAzsQop5IICQI5KKxELzFBQWCH/aR4nWeGd2/3WGHXKInFk/nYmef3vu/MTpVhGPQvdbKA3V2t4Fyldo75XikfwMbfNgV9XBe0/EXQkmwh9Bc/Cyr9EGpNFGR7J3o+lMH3n4LOZD2q7t6n2p591UJ1vbrtfWnR8HtTrYUh72NjBFkJCQEQKZvWRABuv7GoecBTLdZvbZcNJ+ZNyq/tqX6wzIcAbIyWxYBbry1qyegMp1Z0JlCfzOzqjE2Xnjn0dLE8D4UAqDc2M4D7DMjMWn4Jm256tFoSdOWFTRceOWr/+oagrkk7VL5YAD6P9LhLEwsW3S2YlHtn0vlRl7Kyfy1v08MPFg3KAPpf6fKxYgGCarjhUaOMvl5mxQeOmrcOu3T5ue2P2TMRAKXibHJvy7VG1D15HXmwPFBsAMZ8FiMHkUMwxzmgD/Ng9FAswO/M7xSONocSHTLXHBqQ/8LZIVf18S9EmUPHArjF7eF19+ZMNYdbhXFl3YM6EsDm+LkYgOvJa1IHgKg3iBULMPtpT71DF584dPq6559HaiwhIOotwn3vfOxQ24irxjDH3B8BkAEM2IT7DDzVp+fRYo7PIDag+FX4N4YziBJDOx7oNyg2AOqW78q5+67anB6PVrsUyjNd1M9zIsDf1v8OMOgXb/W1Xoz1BvwAAAAASUVORK5CYII=" InformativeScreenshot="02698b9a206ac08b800fd167cf848c4c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Inventory Management' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
                               <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                   <uix:Target DesignTimeRectangle="644, 490, 229, 50" ElementType="Text" FriendlyName="'Orchestrator'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='2' tag='TD' /&gt;" FuzzyAccuracy="0.8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOkAAAA2CAYAAAAiX74ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAXeSURBVHhe7Z3La2RFFIf7T9HFCC7cZaWIulFwJQyCCMaJ8ye4EoQICZIRXfkYRdGM9rjJwqAwwqjBTgyJo2MeQzqZZNJ59SPpzvu9K++pe+t23epz+z3pqvC78JHuqnPrVjXn61O3kyYJgQMHDquPRGY9LwAA9gJJAbCcxOHhoQAA2AskBcByICkAlgNJAbAcSAqA5UBSACwHkgJgOZAUAMuBpABYDiQFwHIgKQCWA0kBsBxICoDlQFLgNIVCQeRyOZFOp0UqlRLDw8NiaGjoUgFJgdOQoBMTE2JkZERks1nZdnZ2Jk5PTyUnJyeS4+NjZ4GkwGmogpKg5+fnoZymmEdHRxG4cWwGkgKnoS0uVVBdUF1MFXdwcOAskBQ4Dd2D0k9TUGpTSb6/vx+yt7fnHHZLupQU3Veui1tLTB8AHvTBClVRTlBTzN3dXSdpg6Qr4ta1p8WTV3T6xRgb2yCQFNSAJFVV1BRUF3NnZ8dZWpN0tF9K2Z1cibRnktdle++oFtsMFyCpnOu1pMgwfQ0jX482vUGBuiBJ9SoaJ+j29raztCDpuOhlBA1pR8JCUlADXVJ6bkqqC1oqlZykaUlrJ7e/DS5LrJ6Ph9vjcqX1hS9vlwMxQ0mj/dwbw1gfc77ql+No/XLezDZdrUfJFuwUwnZ2HP8a0esTuqwx6wv7q702oBpKUrXVrSVosVh0jqYllUnZN872KaIxSgpeIF28TLJfk5TO0RJeihMdo2IukRhfkHLSe/PoK8vFvtkoOY31jfXp4gXrqbiuUUmZ9anxI3PiXhtQE5KU2+peFkGJliSN3eoGSAFMSSsSv7ItJEjwaFXxxwmvLWMMMfQY2R+f/PGS1ham4lxG0rj1sW9gca8DiIWTVK+icYJubW05w4VX0qjYflvs1o4VzBhHVT0GFSPnQW3MfOMlNcX3CcdSVJW0yvooNjyXe21APZiSmltdTlJOBJvpwD3pY5C06jwU/nmmrHVLGlT1qudC0gtHSUqP4yR1WVCiaUkr7/UMYhLWTMSqFbkeSWtsZysw5lWvpFxcbUnj11d7lwHqoRFJOQFcoAVJPWRSViaXTN4KgWMSMahQenv0g6MakgbPTYHCD3m8MXr1a5oiMWLV1RbMO3Jdbr7M+vyx9DhI2iydlPSv+Q22vd20JqnE/PVCpTA+VRJRJbx5Ppf07DiBqNoYYb85timffq66LiepR+R+1IsdY6prOYYROoSfAyRtnE5JOrdaEE98OCGuDk6L1Nw6G9Mu2iApAJ2jU5L+NrsunvnknhSVePv2rJhfK7CxrQJJgdN0crs7tZwXH919KF756j8p6hvfz3hVtf1bYEgKnMaGD46WNwritW+npKivfj0lVrPtraiQFDiNDZISJObLQUUlYTfym2xcM0BS4DS2SEr88WBNvD44LUW9mVpiY5oBkgKnsUlS4puxR1LS7tszbH8zQFLgNLZJml71t71P3fhb3JleY2PioLUkEokQ1Q5JgdPYJinxwZ0FWU3f/yXN9nNMTk5GxKTntDZ6DEmB09go6b3FrJT0+c/+Zfs5aB09PT1sHyQFTmOjpA8yeSnps5/WLylBlXRgYKCy3Vw0AC5ho6QESUpwfdXo6uqSsqqtLgFJgdPYKOncql9Jn2uwkurookJS4DQ2Sjq9nGv4ntSE1qXuUSEpcBobJf3490Up6Xs/z7P9HLQOVTkJujeFpOBSYKOkbyVnpaQ3/2zsr47U/ShBj1U7JAVOY5uk9EVwEpS+xkZ/eM/FNAokBU5jk6RL65vixS/uS0n7f11gY5oBkgKnsUXSiYdZ8eYPM1LQd3+aEyvZNn4LJrOeFwC4Ckl6cHDoybkvdj1Btz05S56cxZJHseQleVFsbm5JCoXNx8JariDe+dG/D33h8/tiYTXPxjVLQuDA4fBBktJ/VaNqyv3DJlVRVVVtJ7OZvLhxd1G8FGxxr343LUbnc2xsK0BSHE4fnZD0n6Wc+DL1KPyStxR00BM0vcHGt0ZJ/A+dobTgXU/DRQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector">
                                     <uix:Target.FuzzySelectorArgument>
                                       <InArgument x:TypeArguments="x:String">
@@ -409,7 +401,7 @@
                           </uix:NClick.Target>
                         </uix:NClick>
                       </Sequence>
-                      <Sequence x:Key="Delete" sap:VirtualizedContainerService.HintSize="376,577" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence x:Key="Delete" sap:VirtualizedContainerService.HintSize="376,575" sap2010:WorkflowViewState.IdRef="Sequence_6">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -448,7 +440,7 @@
                           <uix:NClick.Target>
                             <uix:TargetAnchorable BrowserURL="https://excelcult.com/inventorymanagement/" DesignTimeRectangle="1250, 507, 20, 20" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='IMG' colName='Delete' rowName='1' /&gt;" Guid="05dbd6ff-5aca-44e5-8e3b-b3a753335cf5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKvSURBVEhLvVXLLmxREL2/Y+hN4v0YSAQDE+IxMyFIMCAkBPGWMDExMTUS8RfikXjHAAlBhG6tpXO7q62716k+zul7Trv6Jm2wsk9XV61Vu6r23r9CoRAyiZ8TCAaDikAAwZcXdXh8xPvmJqJ9fYg1NCBeWWmB37Txv1fjY8WbGCs2wWPzJgkE6JQgD+/sINrcDCkvh1RU6FpUpHDZ6ENfi8PEWhx+AgFX5pG5OSUx2VqoqlK0tUFaWx2b/b/xZQxjLRHDZfM6O7DJ5+cd8sJCSHExJCsLMj0NWV+HbGxARkbUxt3Qh2IUMbFuLiKpye/b27r1sjJIUxPk5ARyfQ25uIA8P+t6eQl5etLvmxvI/j6krk4TMrHkcHM6AqZZ0ZYWzZ6orYVMTUEWFyHLy5DZWcjSkv7mN238Hh//3AFBjteHB68AJ8Jy4g7s8tTXQ46PIaenkLMzZyXOzzX76motI+MSjSeXR+B3f3+yQH4+pKcHEg7ranxkbQ2ytaWlGRiAxGKQzk7thUuAXB6BGGvuJ3B3B8nJUdLubsjCAmR3V7M24yjt7bpbl0CssdErwANkCRBuAVNPKS1VoaEhyOoq5OBAe/T2BunocAQS8eRKT6CkRAVYlpUVFWDt0xFIWaJ0BL4qUcom/4eAb5M9Y/p3D25vIYOD2gOOZ02NTpaPgO+YJh00Hhxb4P4ekp2tApwiHq69PZ0itwCTMrHkCJmkvAIG1lVBAU4Ig7q6IADk8BDy8QG5ulLBSARydASJx/Xyoxh3xOxTXRWey467oNDwMGRmBjI6CpmchExMQMbG1MaxZS++c9n5XtcES8WDlpenpSJyc9VWUPDp9+/rOtWDw9oyQ65uJGzffnBotODaCZ/DsJmIaG+vPplmSgjryTQ2/mffnIz58snMFDIsEMIfGsVVmJJXMN8AAAAASUVORK5CYII=" InformativeScreenshot="9bcc0e8c47af32671f79a36ed32648c6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Inventory Management' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
                               <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                   <uix:Target DesignTimeRectangle="644, 490, 229, 50" ElementType="Text" FriendlyName="'Orchestrator'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='2' tag='TD' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector">
                                     <uix:Target.FuzzySelectorArgument>
                                       <InArgument x:TypeArguments="x:String">
